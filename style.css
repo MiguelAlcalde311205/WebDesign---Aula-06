@@ -1,0 +1,567 @@
+
+/* A pseudo-classe :root permite definir variáveis CSS globais,
+  que podem ser reutilizadas em todo o documento. Isso facilita a manutenção
+  do código, especialmente para cores e fontes.
+*/
+:root {
+    /* Paleta de Cores */
+    --primary-color: #8a4fff; /* Roxo principal para botões e destaques */
+    --primary-color-dark: #702fff; /* Tom mais escuro para hover */
+    --background-color: #0a0a0a; /* Fundo escuro principal */
+    --surface-color: #18181b; /* Cor para superfícies como cards e header */
+    --text-color: #f4f4f5; /* Cor do texto principal (claro) */
+    --text-secondary-color: #a1a1aa; /* Cor de texto secundário (cinza claro) */
+    --border-color: #27272a; /* Cor para bordas sutis */
+  
+    /* Tipografia */
+    --font-family-main: 'Inter', sans-serif, system-ui; /* Fonte principal */
+  
+    /* Espaçamentos */
+    --section-padding: 6rem 0; /* Preenchimento vertical para seções */
+  }
+  
+  /* Configuração de rolagem suave para links de âncora (ex: <a href="#sobre">).
+    Quando o usuário clica em um link que aponta para uma seção na mesma página,
+    a rolagem será animada suavemente em vez de pular instantaneamente.
+    Esta é uma das propriedades adicionais para melhorar a experiência do usuário.
+  */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Reset básico e configuração padrão do box-sizing.
+    O seletor universal (*) aplica estas regras a todos os elementos.
+  */
+  * {
+    margin: 0; /* Remove margens padrão do navegador */
+    padding: 0; /* Remove preenchimentos padrão */
+    /* box-sizing: border-box faz com que a largura e altura de um elemento
+      incluam o padding e a border, o que facilita muito o layout.
+    */
+    box-sizing: border-box;
+  }
+  
+  /* Estilos base para o corpo (<body>) do documento.
+  */
+  body {
+    background-color: var(--background-color); /* Aplica a cor de fundo definida na variável */
+    color: var(--text-color); /* Define a cor padrão do texto */
+    font-family: var(--font-family-main); /* Define a fonte padrão */
+    -webkit-font-smoothing: antialiased; /* Melhora a renderização da fonte em navegadores WebKit */
+    line-height: 1.6; /* Define a altura da linha para melhor legibilidade */
+  }
+  
+  /* Remove a decoração de texto (sublinhado) de todos os links */
+  a {
+    text-decoration: none;
+    color: inherit; /* Faz o link herdar a cor do elemento pai */
+  }
+  
+  /* Remove os marcadores de lista padrão */
+  ul {
+    list-style: none;
+  }
+  
+  /* Garante que as imagens sejam responsivas e não ultrapassem seus containers */
+  img {
+    max-width: 100%; /* A largura máxima da imagem será 100% do seu container */
+    height: auto; /* A altura se ajustará automaticamente para manter a proporção */
+    display: block; /* Remove o espaço extra abaixo das imagens */
+  }
+  
+  /* ========================================
+    2. CLASSES UTILITÁRIAS E LAYOUT
+    ========================================
+  */
+  
+  /* Classe "container" para centralizar o conteúdo e definir uma largura máxima.
+    Isso evita que o conteúdo se estique demais em telas grandes.
+  */
+  .container {
+    width: 90%; /* Ocupa 90% da largura da tela */
+    max-width: 1120px; /* Mas não ultrapassa 1120 pixels */
+    margin: 0 auto; /* Centraliza o container horizontalmente */
+    padding: 0 1rem; /* Adiciona um pequeno preenchimento lateral */
+  }
+  
+  /* Classe para definir o estilo padrão das seções.
+  */
+  .section {
+    padding: var(--section-padding); /* Aplica o preenchimento vertical definido na variável */
+  }
+  
+  /* Estilo para títulos de seção (h2).
+  */
+  .section-title {
+    font-size: 2.5rem; /* Tamanho da fonte */
+    text-align: center; /* Alinha o texto ao centro */
+    margin-bottom: 3rem; /* Adiciona espaço abaixo do título */
+    color: var(--primary-color); /* Usa a cor primária para destaque */
+    text-shadow: 0 0 10px rgba(138, 79, 255, 0.3); /* Adiciona um brilho sutil */
+  }
+  
+  /* Estilo para subtítulos de seção.
+  */
+  .section-subtitle {
+    text-align: center; /* Centraliza o texto */
+    max-width: 600px; /* Define uma largura máxima para o parágrafo */
+    margin: -2rem auto 3rem; /* Ajusta a margem para ficar mais próximo do título */
+    color: var(--text-secondary-color); /* Usa a cor de texto secundária */
+  }
+  
+  /* ========================================
+    3. ESTILOS DOS COMPONENTES
+    ========================================
+  */
+  
+  /* --- BOTÕES ---
+    Estilos para os botões principais do site.
+  */
+  .button {
+    display: inline-block; /* Permite definir padding e margin */
+    padding: 0.8rem 2rem; /* Preenchimento interno */
+    background-color: var(--primary-color); /* Cor de fundo */
+    color: var(--text-color); /* Cor do texto */
+    font-weight: 600; /* Peso da fonte */
+    border-radius: 8px; /* Bordas arredondadas */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transição suave para hover */
+    user-select: none; /* Impede que o texto do botão seja selecionado (propriedade adicional) */
+  }
+  
+  /* Efeito de hover para o botão principal */
+  .button:hover {
+    background-color: var(--primary-color-dark); /* Escurece a cor de fundo */
+    transform: translateY(-3px); /* Move o botão ligeiramente para cima */
+  }
+  
+  /* Estilo para botões secundários (outline) */
+  .button-outline {
+    display: inline-block;
+    padding: 0.6rem 1.5rem;
+    border: 2px solid var(--primary-color); /* Borda com a cor primária */
+    color: var(--primary-color); /* Texto com a cor primária */
+    background-color: transparent; /* Fundo transparente */
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease; /* Transição suave */
+  }
+  
+  /* Efeito de hover para o botão outline */
+  .button-outline:hover {
+    background-color: var(--primary-color); /* Preenche o fundo com a cor primária */
+    color: var(--text-color); /* Muda a cor do texto para branco */
+  }
+  
+  /* --- DIVISÓRIAS ---
+    Linha visual para separar as seções.
+  */
+  .divider {
+    height: 2px; /* Altura da linha */
+    width: 80%; /* Largura da linha */
+    max-width: 1000px;
+    margin: 0 auto; /* Centraliza a linha */
+    background: linear-gradient(to right, transparent, var(--border-color), transparent); /* Gradiente para suavizar as pontas */
+  }
+  
+  /* --- ÍCONES SOCIAIS ---
+    Estilo para os links de redes sociais.
+  */
+  .social-links {
+    display: flex; /* Usa Flexbox para alinhar os ícones */
+    gap: 1.5rem; /* Espaço entre os ícones (propriedade adicional) */
+    margin-top: 1.5rem; /* Espaço acima dos links */
+  }
+  
+  .social-links a {
+    font-size: 1.8rem; /* Tamanho do ícone */
+    color: var(--text-secondary-color); /* Cor do ícone */
+    transition: color 0.3s ease, transform 0.3s ease; /* Transição suave */
+  }
+  
+  .social-links a:hover {
+    color: var(--primary-color); /* Muda a cor do ícone no hover */
+    transform: scale(1.1); /* Aumenta ligeiramente o tamanho do ícone */
+  }
+  
+  /* ========================================
+    4. ESTILOS DAS SEÇÕES ESPECÍFICAS
+    ========================================
+  */
+  
+  /* --- CABEÇALHO (HEADER) ---
+  */
+  #header {
+    width: 100%; /* Ocupa toda a largura */
+    padding: 1rem 0; /* Preenchimento vertical */
+    background-color: rgba(24, 24, 27, 0.8); /* Fundo semi-transparente */
+    border-bottom: 1px solid var(--border-color); /* Linha de borda inferior */
+    position: fixed; /* Posição fixa no topo da página */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Garante que o header fique acima de outros conteúdos */
+    /* Efeito de "vidro fosco" (frosted glass) para o fundo.
+      Melhora a legibilidade do texto quando há conteúdo rolando por baixo.
+      Esta é outra propriedade adicional.
+    */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* Para compatibilidade com Safari */
+  }
+  
+  #header nav {
+    display: flex; /* Usa Flexbox para o layout da navegação */
+    justify-content: space-between; /* Espaça os itens (logo e menu) */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+  }
+  
+  .menu {
+    display: flex;
+    gap: 2rem; /* Espaçamento entre os itens do menu */
+  }
+  
+  .menu a {
+    font-weight: 500;
+    position: relative; /* Necessário para o pseudo-elemento ::after */
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
+  }
+  
+  /* Efeito de sublinhado animado no hover */
+  .menu a::after {
+    content: ''; /* Conteúdo vazio, necessário para o pseudo-elemento */
+    width: 0; /* Largura inicial 0 */
+    height: 2px; /* Altura do sublinhado */
+    background-color: var(--primary-color); /* Cor do sublinhado */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease; /* Anima a largura */
+  }
+  
+  .menu a:hover {
+    color: var(--primary-color);
+  }
+  
+  .menu a:hover::after {
+    width: 100%; /* Aumenta a largura para 100% no hover */
+  }
+  
+  /* --- SEÇÃO INÍCIO (HERO) ---
+  */
+  #inicio {
+    padding-top: 10rem; /* Adiciona padding extra no topo para compensar o header fixo */
+    min-height: 100vh; /* Altura mínima de 100% da altura da viewport */
+    display: flex;
+    align-items: center;
+  }
+  
+  .hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+  }
+  
+  .hero-text {
+    max-width: 50%; /* Limita a largura do texto */
+  }
+  
+  .hero-text h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-text p {
+    font-size: 1.2rem;
+    color: var(--text-secondary-color);
+    margin-bottom: 2rem;
+  }
+  
+  .hero-image img {
+    border-radius: 16px;
+    /* Sombra mais suave e realista usando filter: drop-shadow().
+      Esta é mais uma propriedade adicional.
+    */
+    filter: drop-shadow(0 10px 20px rgba(138, 79, 255, 0.2));
+    animation: float 4s ease-in-out infinite; /* Animação de flutuação */
+  }
+  
+  /* @keyframes define uma animação.
+    A animação "float" move a imagem para cima e para baixo suavemente.
+  */
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+  }
+  
+  /* --- SEÇÃO SOBRE ---
+  */
+  .about-content {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+  }
+  
+  .about-image img {
+    border-radius: 16px;
+    /* clip-path permite criar formas complexas para os elementos.
+      Aqui criamos um formato chanfrado para a imagem.
+      Propriedade adicional avançada.
+    */
+    clip-path: polygon(0 10%, 100% 0, 100% 90%, 0% 100%);
+  }
+  
+  .about-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+  }
+  
+  .about-text p {
+    color: var(--text-secondary-color);
+    margin-bottom: 1rem;
+  }
+  
+  /* --- SEÇÃO HABILIDADES ---
+  */
+  .skills-grid {
+    display: grid;
+    /* Cria colunas responsivas. repeat(auto-fit, ...) cria quantas colunas
+      couberem, com um tamanho mínimo de 250px e máximo de 1fr (fração do espaço).
+    */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem; /* Espaço entre os cards */
+  }
+  
+  .skill-card {
+    background-color: var(--surface-color); /* Cor de fundo do card */
+    padding: 2rem; /* Preenchimento interno */
+    border-radius: 12px; /* Bordas arredondadas */
+    text-align: center; /* Centraliza o conteúdo */
+    border: 1px solid var(--border-color); /* Borda sutil */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave */
+  }
+  
+  .skill-card:hover {
+    transform: translateY(-10px); /* Move o card para cima no hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 0 20px rgba(138, 79, 255, 0.3); /* Adiciona duas sombras */
+  }
+  
+  .skill-card i {
+    font-size: 3.5rem; /* Tamanho do ícone */
+    color: var(--primary-color); /* Cor do ícone */
+    margin-bottom: 1rem;
+  }
+  
+  .skill-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .skill-card p {
+    color: var(--text-secondary-color);
+  }
+  
+  /* --- SEÇÃO PROJETOS ---
+  */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+  }
+  
+  .project-card {
+    background-color: var(--surface-color);
+    border-radius: 12px;
+    overflow: hidden; /* Esconde partes da imagem que saem do card */
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column; /* Organiza os itens em coluna */
+  }
+  
+  .project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .project-card img {
+    /* Define a proporção da imagem. A imagem terá uma largura de 16 unidades
+      para cada 9 unidades de altura. Propriedade adicional moderna.
+    */
+    aspect-ratio: 16 / 9;
+    object-fit: cover; /* Garante que a imagem cubra todo o espaço sem distorcer */
+  }
+  
+  .project-info {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Faz esta div crescer para ocupar o espaço disponível */
+  }
+  
+  .project-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .project-info p {
+    color: var(--text-secondary-color);
+    margin-bottom: 1.5rem;
+    flex-grow: 1; /* Empurra os links para o final do card */
+  }
+  
+  .project-links {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  /* --- SEÇÃO CONTATO ---
+  */
+  .contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Espaço entre os campos do formulário */
+  }
+  
+  .contact-form label {
+    font-weight: 500;
+    margin-bottom: -0.5rem; /* Aproxima o label do campo */
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 2px solid var(--border-color);
+    background-color: var(--surface-color);
+    color: var(--text-color);
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Estilo para quando o campo do formulário está em foco (selecionado).
+    :focus-visible é uma pseudo-classe de acessibilidade que aplica o foco
+    apenas quando o usuário navega com o teclado. Propriedade adicional.
+  */
+  .contact-form input:focus,
+  .contact-form textarea:focus,
+  .contact-form input:focus-visible,
+  .contact-form textarea:focus-visible {
+    outline: none; /* Remove a borda de foco padrão do navegador */
+    border-color: var(--primary-color); /* Adiciona uma borda colorida */
+    box-shadow: 0 0 0 3px rgba(138, 79, 255, 0.3); /* Adiciona um brilho de foco */
+  }
+  
+  .contact-form button {
+    align-self: flex-start; /* Alinha o botão à esquerda */
+    margin-top: 1rem;
+  }
+  
+  /* --- RODAPÉ (FOOTER) ---
+  */
+  #footer {
+    padding: 2rem 0;
+    border-top: 1px solid var(--border-color);
+    background-color: var(--surface-color);
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .footer-content p {
+    color: var(--text-secondary-color);
+  }
+  
+  /* ========================================
+    5. RESPONSIVIDADE (MEDIA QUERIES)
+    ========================================
+  */
+  
+  /* Para telas com largura máxima de 768px (tablets e celulares grandes).
+  */
+  @media (max-width: 768px) {
+    /* Ajustes gerais */
+    .section-title {
+      font-size: 2rem;
+    }
+    
+    /* Esconde o menu de navegação padrão */
+    .menu {
+      display: none;
+      /* Futuramente, aqui poderia ser implementado um menu hambúrguer com JavaScript. */
+    }
+  
+    /* Seção de Início */
+    .hero-content {
+      flex-direction: column; /* Coloca o texto acima da imagem */
+      text-align: center;
+    }
+  
+    .hero-text {
+      max-width: 100%;
+    }
+  
+    .hero-text h1 {
+      font-size: 2.5rem;
+    }
+    
+    /* Seção Sobre */
+    .about-content {
+      flex-direction: column; /* Empilha a imagem e o texto */
+      text-align: center;
+    }
+  
+    .about-text .social-links {
+      justify-content: center; /* Centraliza os ícones sociais */
+    }
+    
+    /* Rodapé */
+    .footer-content {
+      flex-direction: column; /* Empilha o texto e os ícones */
+      gap: 1rem;
+      text-align: center;
+    }
+  }
+  
+  /* Para telas com largura máxima de 480px (celulares pequenos).
+  */
+  @media (max-width: 480px) {
+    /* Ajustes gerais */
+    .section {
+      padding: 4rem 0; /* Diminui o preenchimento das seções */
+    }
+    
+    /* Seção de Início */
+    #inicio {
+      padding-top: 8rem;
+    }
+    
+    .hero-text h1 {
+      font-size: 2rem;
+    }
+  
+    .hero-text p {
+      font-size: 1rem;
+    }
+  
+    /* Formulário de Contato */
+    .contact-form button {
+      align-self: stretch; /* Faz o botão ocupar toda a largura */
+    }
+  }
+  
+  

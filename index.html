@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<!-- A lang="pt-BR" define o idioma principal do documento como Português do Brasil. -->
+<html lang="pt-BR">
+
+<head>
+  <!-- 
+    A tag <head> contém metadados sobre o documento, que não são exibidos diretamente na página,
+    mas são importantes para os navegadores e mecanismos de busca.
+  -->
+
+  <!-- A codificação de caracteres UTF-8 é usada para garantir que todos os caracteres,
+     incluindo acentos e símbolos, sejam exibidos corretamente. -->
+  <meta charset="UTF-8">
+
+  <!-- A meta tag de viewport é crucial para o design responsivo.
+     Ela instrui o navegador a usar a largura do dispositivo como a largura da viewport
+     e define o nível de zoom inicial para 1.0. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- O título da página, que aparece na aba do navegador. -->
+  <title>Meu Portfólio | Desenvolvedor Web</title>
+
+  <!-- Breve descrição do conteúdo da página, usada por mecanismos de busca. -->
+  <meta name="description" content="Portfólio profissional demonstrando projetos e habilidades em desenvolvimento web.">
+
+  <!-- 
+    A tag <link> é usada para vincular recursos externos.
+    Aqui, estamos vinculando nossa folha de estilos externa (style.css).
+    'rel="stylesheet"' informa ao navegador que este é um arquivo de estilo.
+    'href' especifica o caminho para o arquivo.
+  -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Link para a biblioteca de ícones "Phosphor Icons" para usar SVGs facilmente. -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+  <!-- 
+    A tag <body> contém todo o conteúdo visível da página web.
+  -->
+
+  <!-- 
+    ========================================
+    CABEÇALHO (HEADER) E NAVEGAÇÃO
+    ========================================
+    A tag <header> representa o cabeçalho da página, geralmente contendo
+    o logotipo do site, título e a navegação principal.
+  -->
+  <header id="header">
+    <!-- 
+      A tag <nav> é usada para a navegação principal do site.
+      A classe "container" é uma classe utilitária para centralizar o conteúdo.
+    -->
+    <nav class="container">
+      <!-- Logotipo ou nome do site. O link leva para o topo da página. -->
+      <a href="#" class="logo">Meu Portfólio</a>
+
+      <!-- 
+        Lista não ordenada (<ul>) que contém os links de navegação.
+        A classe "menu" é usada para estilizar a lista.
+      -->
+      <ul class="menu">
+        <!-- 
+          Cada item da lista (<li>) contém um link de navegação (<a>).
+          Os links apontam para seções específicas da página (usando #id).
+        -->
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+      <!-- Fim da lista de navegação -->
+    </nav>
+    <!-- Fim da tag de navegação -->
+  </header>
+  <!-- Fim do cabeçalho -->
+
+  <!-- 
+    O conteúdo principal da página começa aqui.
+    A tag <main> é usada para o conteúdo principal e único do documento.
+  -->
+  <main>
+
+    <!-- 
+      ========================================
+      SEÇÃO DE INÍCIO (HERO SECTION)
+      ========================================
+      Esta é a primeira seção que o usuário vê. Geralmente contém uma
+      mensagem de boas-vindas e um call-to-action.
+      A tag <section> é usada para agrupar conteúdo tematicamente relacionado.
+    -->
+    <section id="inicio" class="section">
+      <div class="container hero-content">
+        <!-- 
+          O conteúdo da seção de início.
+          A classe "hero-text" agrupa os textos para facilitar o layout.
+        -->
+        <div class="hero-text">
+          <!-- Título principal da página. -->
+          <h1>Desenvolvedor Web Criativo e Focado em Resultados</h1>
+          <!-- Parágrafo de introdução. -->
+          <p>
+            Olá! Eu sou um desenvolvedor apaixonado por criar interfaces bonitas,
+            funcionais e acessíveis. Transformo ideias em realidade digital.
+          </p>
+          <!-- Botão "Call to Action" que leva para a seção de projetos. -->
+          <a href="#projetos" class="button">Ver Meus Projetos</a>
+        </div>
+
+        <!-- 
+          Esta div conterá uma imagem ou ilustração de destaque.
+          A classe "hero-image" é usada para estilização.
+        -->
+        <div class="hero-image">
+          <!-- 
+            A tag <img> é usada para exibir imagens.
+            'src' é o caminho da imagem.
+            'alt' é um texto alternativo para acessibilidade e SEO.
+            Usamos um placeholder da "placehold.co" como exemplo.
+          -->
+          <img src="https://placehold.co/450x450/8a4fff/ffffff?text=Dev" alt="Ilustração de um desenvolvedor trabalhando em um laptop.">
+        </div>
+      </div>
+      <!-- Fim do container da seção de início -->
+    </section>
+    <!-- Fim da seção de início -->
+
+    <!-- Linha divisória para separar as seções visualmente. -->
+    <div class="divider"></div>
+
+    <!-- 
+      ========================================
+      SEÇÃO SOBRE MIM
+      ========================================
+      Seção com informações sobre o desenvolvedor, como sua história,
+      paixões e experiência.
+    -->
+    <section id="sobre" class="section">
+      <div class="container about-content">
+        <!-- 
+          Div para a imagem de perfil.
+          A classe "about-image" permite estilizar a imagem.
+        -->
+        <div class="about-image">
+          <img src="https://placehold.co/400x400/18181b/ffffff?text=Foto" alt="Foto de perfil do desenvolvedor.">
+        </div>
+        <!-- 
+          Div para o texto da seção "Sobre Mim".
+          A classe "about-text" agrupa os elementos de texto.
+        -->
+        <div class="about-text">
+          <!-- Título da seção. -->
+          <h2>Sobre Mim</h2>
+          <!-- Parágrafos com a descrição pessoal. -->
+          <p>
+            Desde cedo, fui fascinado por como a tecnologia poderia conectar pessoas e simplificar tarefas.
+            Essa paixão me levou ao desenvolvimento web, onde encontrei um universo de possibilidades
+            para criar soluções inovadoras.
+          </p>
+          <p>
+            Com experiência sólida em HTML, CSS e JavaScript, busco constantemente aprender novas tecnologias
+            e aprimorar minhas habilidades para entregar projetos de alta qualidade que superem as expectativas.
+            Acredito que um bom design é a chave para uma experiência de usuário memorável.
+          </p>
+          <!-- 
+            Div para links de redes sociais, usando ícones da Phosphor Icons.
+          -->
+          <div class="social-links">
+            <a href="#" target="_blank" title="GitHub"><i class="ph-bold ph-github-logo"></i></a>
+            <a href="#" target="_blank" title="LinkedIn"><i class="ph-bold ph-linkedin-logo"></i></a>
+            <a href="#" target="_blank" title="Instagram"><i class="ph-bold ph-instagram-logo"></i></a>
+          </div>
+        </div>
+      </div>
+      <!-- Fim do container da seção "Sobre Mim" -->
+    </section>
+    <!-- Fim da seção "Sobre Mim" -->
+
+    <!-- Linha divisória. -->
+    <div class="divider"></div>
+
+    <!-- 
+      ========================================
+      SEÇÃO DE HABILIDADES
+      ========================================
+      Esta seção destaca as principais competências técnicas do desenvolvedor.
+    -->
+    <section id="habilidades" class="section">
+      <div class="container">
+        <!-- Título da seção. -->
+        <h2 class="section-title">Minhas Habilidades</h2>
+        <!-- 
+          Container para os cards de habilidades.
+          A classe "skills-grid" usará CSS Grid para organizar os cards.
+        -->
+        <div class="skills-grid">
+          <!-- 
+            Cada "skill-card" representa uma habilidade.
+            Contém um ícone, o nome da habilidade e uma descrição.
+          -->
+          <div class="skill-card">
+            <i class="ph-bold ph-file-html"></i>
+            <h3>HTML5</h3>
+            <p>Criação de estruturas semânticas e acessíveis para a web.</p>
+          </div>
+          <!-- Card de habilidade 2 -->
+          <div class="skill-card">
+            <i class="ph-bold ph-file-css"></i>
+            <h3>CSS3</h3>
+            <p>Estilização moderna com Flexbox, Grid e animações.</p>
+          </div>
+          <!-- Card de habilidade 3 -->
+          <div class="skill-card">
+            <i class="ph-bold ph-file-js"></i>
+            <h3>JavaScript</h3>
+            <p>Desenvolvimento de interatividade e dinamismo para páginas.</p>
+          </div>
+          <!-- Card de habilidade 4 -->
+          <div class="skill-card">
+            <i class="ph-bold ph-react-logo"></i>
+            <h3>React</h3>
+            <p>Construção de interfaces de usuário reativas e componentizadas.</p>
+          </div>
+          <!-- Card de habilidade 5 -->
+          <div class="skill-card">
+            <i class="ph-bold ph-git-branch"></i>
+            <h3>Git & GitHub</h3>
+            <p>Controle de versão e colaboração em projetos de software.</p>
+          </div>
+          <!-- Card de habilidade 6 -->
+          <div class="skill-card">
+            <i class="ph-bold ph-figma-logo"></i>
+            <h3>Design UI/UX</h3>
+            <p>Criação de protótipos e designs focados na experiência do usuário.</p>
+          </div>
+        </div>
+        <!-- Fim do grid de habilidades -->
+      </div>
+      <!-- Fim do container da seção de habilidades -->
+    </section>
+    <!-- Fim da seção de habilidades -->
+
+    <!-- Linha divisória. -->
+    <div class="divider"></div>
+
+    <!-- 
+      ========================================
+      SEÇÃO DE PROJETOS
+      ========================================
+      Galeria com os principais projetos desenvolvidos.
+    -->
+    <section id="projetos" class="section">
+      <div class="container">
+        <!-- Título da seção. -->
+        <h2 class="section-title">Projetos em Destaque</h2>
+        <!-- 
+          Container para os cards de projetos.
+          A classe "projects-grid" usará CSS Grid.
+        -->
+        <div class="projects-grid">
+          <!-- 
+            Cada "project-card" representa um projeto.
+            Contém uma imagem, título, descrição e links.
+          -->
+          <div class="project-card">
+            <img src="https://placehold.co/600x400/18181B/8A4FFF?text=Projeto+1" alt="Imagem do Projeto 1">
+            <div class="project-info">
+              <h3>Sistema de E-commerce</h3>
+              <p>Uma plataforma completa de loja virtual com carrinho de compras e checkout.</p>
+              <div class="project-links">
+                <a href="#" class="button-outline">Ver Demo</a>
+                <a href="#" class="button-outline">Repositório</a>
+              </div>
+            </div>
+          </div>
+          <!-- Card de projeto 2 -->
+          <div class="project-card">
+            <img src="https://placehold.co/600x400/18181B/8A4FFF?text=Projeto+2" alt="Imagem do Projeto 2">
+            <div class="project-info">
+              <h3>Aplicativo de Clima</h3>
+              <p>App que consome uma API para exibir a previsão do tempo em tempo real.</p>
+              <div class="project-links">
+                <a href="#" class="button-outline">Ver Demo</a>
+                <a href="#" class="button-outline">Repositório</a>
+              </div>
+            </div>
+          </div>
+          <!-- Card de projeto 3 -->
+          <div class="project-card">
+            <img src="https://placehold.co/600x400/18181B/8A4FFF?text=Projeto+3" alt="Imagem do Projeto 3">
+            <div class="project-info">
+              <h3>Landing Page Responsiva</h3>
+              <p>Página de captura para um produto digital, otimizada para todos os dispositivos.</p>
+              <div class="project-links">
+                <a href="#" class="button-outline">Ver Demo</a>
+                <a href="#" class="button-outline">Repositório</a>
+              </div>
+            </div>
+          </div>
+          <!-- Card de projeto 4 -->
+          <div class="project-card">
+            <img src="https://placehold.co/600x400/18181B/8A4FFF?text=Projeto+4" alt="Imagem do Projeto 4">
+            <div class="project-info">
+              <h3>Blog Pessoal</h3>
+              <p>Plataforma de blog com sistema de gerenciamento de conteúdo (CMS) integrado.</p>
+              <div class="project-links">
+                <a href="#" class="button-outline">Ver Demo</a>
+                <a href="#" class="button-outline">Repositório</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Fim do grid de projetos -->
+      </div>
+      <!-- Fim do container da seção de projetos -->
+    </section>
+    <!-- Fim da seção de projetos -->
+
+    <!-- Linha divisória. -->
+    <div class="divider"></div>
+
+    <!-- 
+      ========================================
+      SEÇÃO DE CONTATO
+      ========================================
+      Formulário para que os visitantes possam entrar em contato.
+    -->
+    <section id="contato" class="section">
+      <div class="container">
+        <!-- Título da seção. -->
+        <h2 class="section-title">Vamos Conversar?</h2>
+        <p class="section-subtitle">
+          Estou sempre aberto a novas oportunidades e colaborações.
+          Envie uma mensagem!
+        </p>
+        <!-- 
+          A tag <form> é usada para criar um formulário HTML.
+          O atributo 'action' especifica para onde enviar os dados do formulário.
+          O atributo 'method' especifica o método HTTP a ser usado (POST).
+        -->
+        <form action="#" method="POST" class="contact-form">
+          <!-- 
+            A tag <label> define um rótulo para um elemento <input>.
+            O atributo 'for' deve ser igual ao 'id' do input correspondente.
+          -->
+          <label for="name">Nome:</label>
+          <!-- 
+            A tag <input> especifica um campo de entrada onde o usuário pode inserir dados.
+            'type' define o tipo de entrada (texto, email, etc.).
+            'id' é um identificador único.
+            'name' é usado para referenciar os dados do formulário após o envio.
+            'required' torna o campo obrigatório.
+          -->
+          <input type="text" id="name" name="name" required placeholder="Digite seu nome completo">
+
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" name="email" required placeholder="seu.email@exemplo.com">
+
+          <label for="message">Mensagem:</label>
+          <!-- 
+            A tag <textarea> define um campo de entrada de texto de múltiplas linhas.
+            'rows' especifica o número de linhas visíveis.
+          -->
+          <textarea id="message" name="message" rows="6" required placeholder="Deixe sua mensagem aqui..."></textarea>
+
+          <!-- Botão para enviar o formulário. -->
+          <button type="submit" class="button">Enviar Mensagem</button>
+        </form>
+        <!-- Fim do formulário de contato -->
+      </div>
+      <!-- Fim do container da seção de contato -->
+    </section>
+    <!-- Fim da seção de contato -->
+
+  </main>
+  <!-- Fim do conteúdo principal -->
+
+  <!-- 
+    ========================================
+    RODAPÉ (FOOTER)
+    ========================================
+    A tag <footer> representa o rodapé da página, geralmente contendo
+    informações de direitos autorais, links para redes sociais, etc.
+  -->
+  <footer id="footer">
+    <div class="container footer-content">
+      <!-- 
+        Parágrafo com informações de direitos autorais.
+        '&copy;' é a entidade HTML para o símbolo de copyright.
+        'new Date().getFullYear()' insere o ano atual dinamicamente com JavaScript.
+      -->
+      <p>&copy; <span id="currentYear"></span> Meu Portfólio. Todos os direitos reservados.</p>
+      <!-- 
+        Links para redes sociais no rodapé.
+        Repetimos aqui para fácil acesso no final da página.
+      -->
+      <div class="social-links">
+        <a href="#" target="_blank" title="GitHub"><i class="ph-bold ph-github-logo"></i></a>
+        <a href="#" target="_blank" title="LinkedIn"><i class="ph-bold ph-linkedin-logo"></i></a>
+        <a href="#" target="_blank" title="Instagram"><i class="ph-bold ph-instagram-logo"></i></a>
+      </div>
+    </div>
+  </footer>
+  <!-- Fim do rodapé -->
+
+  <!-- Script simples para atualizar o ano no rodapé. -->
+  <script>
+    // Seleciona o elemento com o id "currentYear" e insere o ano atual.
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+
+</html>
